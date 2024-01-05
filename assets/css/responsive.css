@@ -18,6 +18,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .tecnology {
+    flex-basis: 33.33%; /* Mostrará 3 elementos por fila */
+  }
+}
+
 @media screen and (min-width: 1622px) {
   .blog-item {
     height: 45rem;
