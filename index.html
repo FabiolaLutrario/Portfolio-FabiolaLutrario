@@ -365,7 +365,7 @@
                 </div>
             </div>
     
-            <form action="https://formspree.io/f/xoqgvede" method="post" class="contact-form" id="contactUs-Form">
+            <form action="https://formspree.io/f/xoqgvede" method="post" class="contact-form" id="contactUs-Form" enctype="multipart/form-data">
                     
                 <input type="text" name="name" class="box" id="name" placeholder="Nombre y apellido" required />
                 <input type="email" name="email" class="box" id="email" placeholder="Email" required />
@@ -439,26 +439,13 @@
     }
     </script>
 
-    <!-- Contact-Form Script -->
-<!--     <script>
-        jQuery('#contactUs-Form').on('submit',function(e){
-          jQuery('#msg').html('');
-          jQuery('#submit').html('Enviando...');
-          jQuery('#submit').attr('disabled',true);
-          jQuery.ajax({
-              url:'assets/php/submit.php',
-              type:'post',
-              data:jQuery('#contactUs-Form').serialize(),
-              success:function(result){
-                  jQuery('#msg').html(result);
-                  jQuery('#submit').html('Submit');
-                  jQuery('#submit').attr('disabled',false);
-                  jQuery('#contactUs-Form')[0].reset();
-              }
-          });
-          e.preventDefault();
-        });
-    </script> -->
+<script>
+window.onbeforeunload = () => {
+  for(const form of document.getElementsByClassName('contact-form')) {
+    form.reset();
+  }
+}
+</script>
 
 </body>
 </html>
